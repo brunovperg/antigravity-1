@@ -50,7 +50,7 @@ export default function Clinic() {
               viewport={{ once: true }}
             >
                 <div className="tech-img-wrapper" style={{ position: 'relative' }}>
-                    <img src="/img/exame_oftalmo.png" alt="Equipamentos tecnológicos oftalmológicos modernos" className="tech-img-main" style={{ width: '100%', borderRadius: 'var(--border-radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+                    <img src={`${import.meta.env.BASE_URL}img/exame_oftalmo.png`} alt="Equipamentos tecnológicos oftalmológicos modernos" className="tech-img-main" style={{ width: '100%', borderRadius: 'var(--border-radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
                 </div>
             </motion.div>
         </div>

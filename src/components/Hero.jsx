@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
@@ -30,7 +30,7 @@ export default function Hero() {
               className="hero-image-wrapper"
             >
                 <div className="hero-image-bg"></div>
-                <img src="/img/dra_maria_eduarda.png" alt="Dra. Maria Eduarda" className="hero-img-main" />
+                <img src={`${import.meta.env.BASE_URL}img/dra_maria_eduarda.png`} alt="Dra. Maria Eduarda" className="hero-img-main" />
             </motion.div>
         </div>
     </section>

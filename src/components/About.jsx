@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function About() {
@@ -12,7 +12,7 @@ export default function About() {
               className="about-images"
             >
                 <div className="about-img-container">
-                    <img src="/img/clinica_luxo.png" alt="Clínica" className="about-img-main" />
+                    <img src={`${import.meta.env.BASE_URL}img/clinica_luxo.png`} alt="Clínica" className="about-img-main" />
                 </div>
             </motion.div>
             <motion.div 
