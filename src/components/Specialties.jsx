@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function Specialties() {
@@ -52,19 +52,20 @@ export default function Specialties() {
                 {specialties.map((item, index) => (
                   <motion.div 
                     key={item.id}
-                    className="specialty-card" 
-                    id={`specialty-${item.id}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
+                    style={{ height: '100%' }}
                   >
-                      <div className="specialty-icon-wrapper">
-                          <i className={item.icon}></i>
+                      <div className="specialty-card" id={`specialty-${item.id}`}>
+                          <div className="specialty-icon-wrapper">
+                              <i className={item.icon}></i>
+                          </div>
+                          <h3 className="specialty-title">{item.title}</h3>
+                          <p className="specialty-desc">{item.desc}</p>
+                          <a href={`https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20${item.title}`} target="_blank" rel="noopener noreferrer" className="specialty-link">Saiba Mais <i className="fa-solid fa-arrow-right"></i></a>
                       </div>
-                      <h3 className="specialty-title">{item.title}</h3>
-                      <p className="specialty-desc">{item.desc}</p>
-                      <a href={`https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20${item.title}`} target="_blank" rel="noopener noreferrer" className="specialty-link">Saiba Mais <i className="fa-solid fa-arrow-right"></i></a>
                   </motion.div>
                 ))}
             </div>
