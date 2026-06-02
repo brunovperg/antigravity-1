@@ -4,6 +4,12 @@ import { motion } from 'framer-motion';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('inicio');
+
+  const setNavActive = (link) => {
+    setActiveLink(link);
+    setMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,12 +32,12 @@ export default function Navbar() {
             
             <nav className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`} id="nav-menu">
                 <ul className="nav-list" style={{ gap: '16px', alignItems: 'center' }}>
-                    <li><a href="#inicio" className="nav-link active" onClick={() => setMobileMenuOpen(false)}>Início</a></li>
-                    <li><a href="#sobre" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Sobre Mim</a></li>
-                    <li><a href="#especialidades" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Especialidades</a></li>
-                    <li><a href="#tecnologia" className="nav-link" onClick={() => setMobileMenuOpen(false)}>A Clínica</a></li>
-                    <li><a href="#depoimentos" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Depoimentos</a></li>
-                    <li><a href="#faq" className="nav-link" onClick={() => setMobileMenuOpen(false)}>FAQ</a></li>
+                    <li><a href="#inicio" className={`nav-link ${activeLink === 'inicio' ? 'active' : ''}`} onClick={() => setNavActive('inicio')}>Início</a></li>
+                    <li><a href="#sobre" className={`nav-link ${activeLink === 'sobre' ? 'active' : ''}`} onClick={() => setNavActive('sobre')}>Sobre Mim</a></li>
+                    <li><a href="#especialidades" className={`nav-link ${activeLink === 'especialidades' ? 'active' : ''}`} onClick={() => setNavActive('especialidades')}>Especialidades</a></li>
+                    <li><a href="#tecnologia" className={`nav-link ${activeLink === 'tecnologia' ? 'active' : ''}`} onClick={() => setNavActive('tecnologia')}>A Clínica</a></li>
+                    <li><a href="#depoimentos" className={`nav-link ${activeLink === 'depoimentos' ? 'active' : ''}`} onClick={() => setNavActive('depoimentos')}>Depoimentos</a></li>
+                    <li><a href="#faq" className={`nav-link ${activeLink === 'faq' ? 'active' : ''}`} onClick={() => setNavActive('faq')}>FAQ</a></li>
                 </ul>
             </nav>
 
